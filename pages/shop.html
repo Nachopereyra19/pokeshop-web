@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéStore - Shop</title>
+
+  <!-- Fuente Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Ruta ajustada al CSS (sube un nivel) -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+<header>
+  <!-- Logo y nombre centrados -->
+  <div class="header-top">
+    <img src="../img/logo.png" alt="Logo PokéStore" class="logo">
+    <h1 class="store-name">PokéStore</h1>
+  </div>
+
+  <!-- Menú inferior centrado -->
+  <nav class="header-bottom">
+    <div class="nav-left">
+      <a href="../index.html">Inicio</a>
+      <a href="./contacto.html">Contacto</a>
+    </div>
+    <div class="nav-right">
+      <a href="pages/carrito.html" class="cart-link">
+        <i class="fas fa-shopping-cart"></i> Mi carrito
+      </a>
+    </div>
+  </nav>
+</header>
+
+
+<!-- Menú centrado de Shop -->
+<nav class="shop-menu">
+  <a href="shop.html">Cartas Individuales</a>
+  <a href="shop.html">Artículos Sellados</a>
+</nav>
+
+  <main>
+
+    <!-- Sección de cartas individuales -->
+    <section id="cartas">
+      <h2>Cartas Individuales</h2>
+      <div class="productos">
+
+        <!-- Producto 1 -->
+        <div class="producto tipo-fuego">
+          <div class="mini-galeria">
+            <img src="https://images.pokemontcg.io/sv2/6_hires.png" alt="Charizard ex">
+            <img src="https://images.pokemontcg.io/sv2/4_hires.png" alt="Pikachu">
+            <img src="https://images.pokemontcg.io/sv2/9_hires.png" alt="Gengar">
+          </div>
+          <h3>Bulk de 50 cartas variado</h3>
+          <p class="precio">$25.000 ARS</p>
+          <a href="#" class="btn">Ver Detalles</a>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="producto tipo-agua">
+        <div class="mini-galeria-slider">
+            <div class="slider-track">
+            <img src="https://images.pokemontcg.io/sv2/6_hires.png" alt="Charizard ex">
+            <img src="https://images.pokemontcg.io/sv2/4_hires.png" alt="Pikachu">
+            <img src="https://images.pokemontcg.io/sv2/9_hires.png" alt="Gengar">
+            <img src="https://images.pokemontcg.io/sv2/12_hires.png" alt="Dragonite">
+            <img src="https://images.pokemontcg.io/sv2/15_hires.png" alt="Mewtwo">
+            </div>
+        </div>
+
+            <h3>Pack Agua</h3>
+            <p class="precio">$19.500</p>
+            <a href="#" class="btn">Ver Detalles</a>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="producto tipo-planta">
+          <div class="mini-galeria">
+            <img src="https://images.pokemontcg.io/sm115/1_hires.png" alt="Venusaur GX">
+            <img src="https://images.pokemontcg.io/sm115/2_hires.png" alt="Bulbasaur">
+            <img src="https://images.pokemontcg.io/sm115/3_hires.png" alt="Oddish">
+          </div>
+          <h3>Pack Planta</h3>
+          <p class="precio">$16.000</p>
+          <a href="#" class="btn">Ver Detalles</a>
+        </div>
+
+      </div>
+
+      <!-- Paginador -->
+      <div class="paginador">
+        <a href="#" class="page-btn">1</a>
+        <a href="#" class="page-btn">2</a>
+        <a href="#" class="page-btn">3</a>
+        <a href="#" class="page-btn">4</a>
+      </div>
+    </section>
+
+    <!-- Sección de productos sellados -->
+    <section id="sellados">
+      <h2>Artículos Sellados</h2>
+      <div class="productos">
+
+        <!-- Producto sellado 1 -->
+        <div class="producto tipo-electrico">
+          <div class="mini-galeria">
+            <img src="/img/bosterbox.webp" alt="Booster Box">
+          </div>
+          <h3>Booster Box Phantasmal Flames</h3>
+          <p class="precio">$660</p>
+          <a href="#" class="btn">Ver Detalles</a>
+        </div>
+
+      </div>
+
+      <!-- Paginador -->
+      <div class="paginador">
+        <a href="#" class="page-btn">1</a>
+        <a href="#" class="page-btn">2</a>
+        <a href="#" class="page-btn">3</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="footer-contenido">
+      <h3>PokéStore TCG</h3>
+      <p>Tu tienda Pokémon TCG de confianza — cartas, sobres y colecciones.</p>
+      <div class="redes">
+        <a href="https://www.instagram.com/" target="_blank" class="insta"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="face"><i class="fab fa-facebook"></i></a>
+        <a href="https://www.tiktok.com/" target="_blank" class="tiktok"><i class="fab fa-tiktok"></i></a>
+        <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="whats"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+    <p class="copy">© 2025 PokéStore TCG — Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/js/all.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéStore - Locos por el poke</title>
+
+  <!-- Fuente Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Tu CSS externo -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- SOLO QUEDA LA PAGINA DE SHOP MEJORARLA Y A SUBIR ESTA MIERDA A GITHUB - Y CREAR UN CARRITO-->
+
+<header>
+  <div class="header-top">
+    <img src="img/logo.png" alt="Logo PokéStore" class="logo">
+    <h1 class="store-name">PokéStore - Locos por el poke</h1>
+  </div>
+  <nav class="header-bottom">
+    <a href="pages/shop.html">Shop</a>
+    <a href="pages/contacto.html">Contacto</a>
+    <a href="pages/carrito.html"><i class="fas fa-shopping-cart"></i> Mi carrito</a>
+  </nav>
+</header>
+
+<section class="contenido">
+  <h2>Contamos con envío gratis en compras a partir de $50</h2>
+  <section class="buscador">
+    <input type="text" placeholder="Buscar cartas o productos...">
+  </section>
+
+  <!-- CARRUSEL SINGLES -->
+  <h2>Singles</h2>
+  <div class="carousel-wrapper">
+    <button class="carousel-arrow left" onclick="scrollCarrousel(this,-1)"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel">
+      <div class="producto">
+        <img src="img/psa10charizard.webp" alt="Charizard EX">
+        <h3>Charizard EX PSA 10</h3>
+        <p class="precio">$200</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/s-l225.webp" alt="Reshiram EX">
+        <h3>Reshiram EX</h3>
+        <p class="precio">$420</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/luxray championship staff lv 48.jpg" alt="Luxray Staff">
+        <h3>Luxray Staff</h3>
+        <p class="precio">$220</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+    </div>
+    <button class="carousel-arrow right" onclick="scrollCarrousel(this,1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <section class="ver-mas">
+    <a href="pages/shop.html" class="btn-shop">Ver más productos</a>
+  </section>
+
+  <!-- CARRUSEL SELLADOS -->
+  <h2>Sellados</h2>
+  <div class="carousel-wrapper">
+    <button class="carousel-arrow left" onclick="scrollCarrousel(this,-1)"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel">
+      <div class="producto">
+        <img src="img/bosterbox.webp" alt="Booster Box Phantasmal Flames">
+        <h3>Booster Box</h3>
+        <p class="precio">$660</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/etb.webp" alt="ETB Phantasmal Flames">
+        <h3>ETB Phantasmal Flames</h3>
+        <p class="precio">$299</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/bosterpack.webp" alt="Booster Pack">
+        <h3>Booster Pack Phantasmal Flames</h3>
+        <p class="precio">$18</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+    </div>
+    <button class="carousel-arrow right" onclick="scrollCarrousel(this,1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <section class="ver-mas">
+    <a href="pages/shop.html" class="btn-shop">Ver más productos</a>
+  </section>
+</section>
+
+<footer>
+  <div class="footer-contenido">
+    <h3>PokéStore TCG</h3>
+    <p>Tu tienda Pokémon TCG de confianza — cartas, sobres y colecciones.</p>
+    <div class="redes">
+      <a href="https://www.instagram.com/" target="_blank" class="insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank" class="face" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="whats" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+    </div>
+  </div>
+  <p class="copy">© 2025 PokéStore TCG — Todos los derechos reservados.</p>
+</footer>
+<script>
+function scrollCarrousel(button, direction) {
+  const wrapper = button.parentElement;
+  const carousel = wrapper.querySelector('.carousel');
+  const producto = carousel.querySelector('.producto');
+  const width = producto.offsetWidth + 30; // ancho producto + gap
+  carousel.scrollBy({ left: direction * width, behavior: 'smooth' });
+}
+</script>
+
+</body>
+</html>
