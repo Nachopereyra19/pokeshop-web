@@ -1,74 +1,122 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Fuente Orbitron -->
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PokéStore - Locos por el poke</title>
 
-    <!-- Íconos Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>Document</title>
+  <!-- Fuente Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+
+  <!-- Íconos Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Tu CSS externo -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-     <!-- HEADER -->
-  <header>
-    <div class="header-top">
-      <img src="img/logo.png" alt="Logo PokéStore" class="logo">
-      <h1 class="store-name">PokéStore</h1>
-    </div>
+  <!-- SOLO QUEDA LA PAGINA DE SHOP MEJORARLA Y A SUBIR ESTA MIERDA A GITHUB - Y CREAR UN CARRITO-->
 
-    <nav class="header-bottom">
-      <a href="pages/shop.html">Shop</a>
-      <a href="pages/contacto.html">Contacto</a>
-      <a href="pages/carrito.html"><i class="fas fa-shopping-cart"></i> Carrito</a>
-    </nav>
-  </header>
-
-  <!-- CARRUSEL DE SINGLES -->
-  <h2>Singles Destacadas</h2>
-  <div class="carousel-container">
-    <div class="carousel" id="singles">
-      <div class="slide" id="s1"><img src="img/psa10charizard.webp" alt=""><h3>Charizard EX PSA 10</h3><p>$200</p><a href="#" class="btn">Comprar</a></div>
-      <div class="slide" id="s2"><img src="img/s-l225.webp" alt=""><h3>Reshiram EX</h3><p>$420</p><a href="#" class="btn">Comprar</a></div>
-      <div class="slide" id="s3"><img src="img/luxray championship staff lv 48.jpg" alt=""><h3>Luxray Staff</h3><p>$220</p><a href="#" class="btn">Comprar</a></div>
-      <div class="slide" id="s4"><img src="img/umbreonv.webp" alt=""><h3>Umbreon V</h3><p>$300</p><a href="#" class="btn">Comprar</a></div>
-    </div>
-
-    <div class="carousel-arrows">
-      <a href="#s1"><i class="fas fa-chevron-left"></i></a>
-      <a href="#s4"><i class="fas fa-chevron-right"></i></a>
-    </div>
+<header>
+  <div class="header-top">
+    <img src="img/logo.png" alt="Logo PokéStore" class="logo">
+    <h1 class="store-name">PokéStore - Locos por el poke</h1>
   </div>
+  <nav class="header-bottom">
+    <a href="pages/shop.html">Shop</a>
+    <a href="pages/contacto.html">Contacto</a>
+    <a href="pages/carrito.html"><i class="fas fa-shopping-cart"></i> Mi carrito</a>
+  </nav>
+</header>
 
-  <!-- CARRUSEL DE SELLADOS -->
-  <h2>Productos Sellados</h2>
-  <div class="carousel-container">
-    <div class="carousel" id="sellados">
-      <div class="slide" id="p1"><img src="img/bosterbox.webp" alt=""><h3>Booster Box Phantasmal Flames</h3><p>$660</p><a href="#" class="btn">Comprar</a></div>
-      <div class="slide" id="p2"><img src="img/etb.webp" alt=""><h3>ETB Phantasmal Flames</h3><p>$299</p><a href="#" class="btn">Comprar</a></div>
-      <div class="slide" id="p3"><img src="img/bosterpack.webp" alt=""><h3>Booster Pack</h3><p>$18</p><a href="#" class="btn">Comprar</a></div>
-      <div class="slide" id="p4"><img src="img/etb.webp" alt=""><h3>Elite Trainer Box</h3><p>$310</p><a href="#" class="btn">Comprar</a></div>
-    </div>
+<section class="contenido">
+  <h2>Contamos con envío gratis en compras a partir de $50</h2>
+  <section class="buscador">
+    <input type="text" placeholder="Buscar cartas o productos...">
+  </section>
 
-    <div class="carousel-arrows">
-      <a href="#p1"><i class="fas fa-chevron-left"></i></a>
-      <a href="#p4"><i class="fas fa-chevron-right"></i></a>
+  <!-- CARRUSEL SINGLES -->
+  <h2>Singles</h2>
+  <div class="carousel-wrapper">
+    <button class="carousel-arrow left" onclick="scrollCarrousel(this,-1)"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel">
+      <div class="producto">
+        <img src="img/psa10charizard.webp" alt="Charizard EX">
+        <h3>Charizard EX PSA 10</h3>
+        <p class="precio">$200</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/s-l225.webp" alt="Reshiram EX">
+        <h3>Reshiram EX</h3>
+        <p class="precio">$420</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/luxray championship staff lv 48.jpg" alt="Luxray Staff">
+        <h3>Luxray Staff</h3>
+        <p class="precio">$220</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
     </div>
+    <button class="carousel-arrow right" onclick="scrollCarrousel(this,1)"><i class="fas fa-chevron-right"></i></button>
   </div>
+  <section class="ver-mas">
+    <a href="pages/shop.html" class="btn-shop">Ver más productos</a>
+  </section>
 
-  <!-- FOOTER -->
-  <footer>
+  <!-- CARRUSEL SELLADOS -->
+  <h2>Sellados</h2>
+  <div class="carousel-wrapper">
+    <button class="carousel-arrow left" onclick="scrollCarrousel(this,-1)"><i class="fas fa-chevron-left"></i></button>
+    <div class="carousel">
+      <div class="producto">
+        <img src="img/bosterbox.webp" alt="Booster Box Phantasmal Flames">
+        <h3>Booster Box</h3>
+        <p class="precio">$660</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/etb.webp" alt="ETB Phantasmal Flames">
+        <h3>ETB Phantasmal Flames</h3>
+        <p class="precio">$299</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+      <div class="producto">
+        <img src="img/bosterpack.webp" alt="Booster Pack">
+        <h3>Booster Pack Phantasmal Flames</h3>
+        <p class="precio">$18</p>
+        <a href="#" class="btn">Comprar</a>
+      </div>
+    </div>
+    <button class="carousel-arrow right" onclick="scrollCarrousel(this,1)"><i class="fas fa-chevron-right"></i></button>
+  </div>
+  <section class="ver-mas">
+    <a href="pages/shop.html" class="btn-shop">Ver más productos</a>
+  </section>
+</section>
+
+<footer>
+  <div class="footer-contenido">
     <h3>PokéStore TCG</h3>
     <p>Tu tienda Pokémon TCG de confianza — cartas, sobres y colecciones.</p>
     <div class="redes">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-facebook"></i></a>
-      <a href="#"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" class="insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.facebook.com/" target="_blank" class="face" title="Facebook"><i class="fab fa-facebook"></i></a>
+      <a href="https://wa.me/549XXXXXXXXXX" target="_blank" class="whats" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
     </div>
-    <p>© 2025 PokéStore — Todos los derechos reservados.</p>
-  </footer>
+  </div>
+  <p class="copy">© 2025 PokéStore TCG — Todos los derechos reservados.</p>
+</footer>
+<script>
+function scrollCarrousel(button, direction) {
+  const wrapper = button.parentElement;
+  const carousel = wrapper.querySelector('.carousel');
+  const producto = carousel.querySelector('.producto');
+  const width = producto.offsetWidth + 30; // ancho producto + gap
+  carousel.scrollBy({ left: direction * width, behavior: 'smooth' });
+}
+</script>
 
 </body>
 </html>
