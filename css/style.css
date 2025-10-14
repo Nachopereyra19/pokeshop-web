@@ -262,31 +262,6 @@ e {
   margin-top: 8px;
 }
 
-/* ===== Menú Shop centrado ===== */
-.shop-menu {
-  display: flex;
-  justify-content: center;  /* centra horizontalmente */
-  gap: 40px;                /* separación entre enlaces */
-  margin: 30px 0;           /* espacio arriba y abajo */
-}
-
-.shop-menu a {
-  font-family: 'Orbitron', sans-serif; /* fuente */
-  color: #e0ffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.2rem;
-  letter-spacing: 2px;      /* separa letras */
-  text-shadow: 0 0 8px #00ffff55;
-  transition: all 0.3s ease;
-}
-
-.shop-menu a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 15px #00ffff;
-}
-
-
 /* Menú inferior */
 .header-bottom {
   margin-top: 15px;
@@ -450,32 +425,6 @@ footer {
 
 
 
-/* SHOP */
-
-/* ==========================================================
-   🖼 Mini galería dentro del producto
-   ========================================================== */
-.mini-galeria {
-  display: flex;
-  justify-content: center;
-  gap: 5px;
-  padding: 10px 0;
-}
-
-.mini-galeria img {
-  width: 60px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid #00ffff;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.mini-galeria img:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 10px #00ffffaa, 0 0 20px #ff0055aa;
-}
-
 /* ==========================================================
    🔘 Paginador visual
    ========================================================== */
@@ -500,50 +449,6 @@ footer {
 .page-btn:hover {
   transform: scale(1.1);
   box-shadow: 0 0 20px #00ffffff, 0 0 25px #ff0055ff;
-}
-
-/* ==========================================================
-   🖼 Slider de mini-galería horizontal
-   ========================================================== */
-
-.mini-galeria-slider {
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-}
-
-.slider-track {
-  display: flex;
-  gap: 8px;
-}
-
-.slider-track img {
-  width: 60px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid #00ffff;
-  flex-shrink: 0;
-  transition: transform 0.2s, box-shadow 0.3s;
-}
-
-.slider-track img:hover {
-  transform: scale(1.2);
-  box-shadow: 0 0 12px #00ffffaa, 0 0 20px #ff0055aa;
-}
-
-/* Quitar scrollbars en algunos navegadores */
-.mini-galeria-slider::-webkit-scrollbar {
-  height: 6px;
-}
-
-.mini-galeria-slider::-webkit-scrollbar-thumb {
-  background: #00ffff55;
-  border-radius: 3px;
-}
-
-.mini-galeria-slider::-webkit-scrollbar-track {
-  background: transparent;
 }
 
 
@@ -764,3 +669,8 @@ header nav a:hover {
     justify-content: center;
   }
 }
+
+    justify-content: center;
+  }
+}
+
