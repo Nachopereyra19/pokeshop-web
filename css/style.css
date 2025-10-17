@@ -1,207 +1,73 @@
 /* ==========================================================
    🌌 ESTILO OSCURO NEÓN - PokéStore Battle Edition
+   Este CSS crea un estilo oscuro con efectos de neón tipo LED
+   combinando rojos, fucsias y cian para un look moderno y llamativo
    ========================================================== */
 
 /* ===== BASE ===== */
 body {
-  margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top left, #0a0a0f, #0b0f2b 60%, #050510 100%);
-  color: #e0e0e0;
-  font-size: 14px;
-  padding: 10px;
-  overflow-x: hidden;
+  margin: 0; /* Elimina margen por defecto */
+  font-family: 'Poppins', sans-serif; /* Fuente moderna y legible */
+  background: radial-gradient(circle at top left, #0a0a0f, #0b0f2b 60%, #050510 100%); /* Fondo oscuro con gradiente radial */
+  color: #e0e0e0; /* Color de texto general */
+  font-size: 14px; /* Tamaño base de texto */
+  padding: 10px; /* Espaciado general */
+  overflow-x: hidden; /* Evita scroll horizontal */
 }
-
-/* ===== EFECTO LUZ DE FONDO ANIMADO ===== */
-body::before {
-  content: "";
-  position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: conic-gradient(from 0deg, #00ffff33, #ff005533, #00ffff33);
-  animation: neonglow 10s linear infinite;
-  z-index: -1;
-  opacity: 0.3;
-}
-
-@keyframes neonglow {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
 
 /* ===== HEADER ===== */
 header {
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  border-bottom: 2px solid #00ffff;
-  box-shadow: 0 0 15px #00ffff33;
-  padding: 20px 0;
-  color: #fff;
+  background: rgba(0, 0, 0, 0.6); /* Fondo translúcido tipo vidrio oscuro */
+  backdrop-filter: blur(8px); /* Desenfoque del fondo detrás del header */
+  border-bottom: 2px solid #ff0000; /* Línea inferior roja */
+  box-shadow: 0 0 15px #00ffff33; /* Sombra cian suave */
+  padding: 20px 0; /* Espacio arriba y abajo */
+  color: #fff; /* Color del texto */
 }
 
-/* Logo y nombre centrados */
+/* ===== LOGO Y NOMBRE ===== */
 .header-top {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  display: flex; /* Flexbox para alinear verticalmente */
+  flex-direction: column; /* Apila logo y nombre en columna */
+  align-items: center; /* Centrado horizontal */
+  text-align: center; /* Centrado de texto */
 }
 
 .logo {
-  width: 100px;
-  height: auto;
-  filter: drop-shadow(0 0 12px #00ffffaa);
+  width: 100px; /* Tamaño del logo */
+  height: auto; /* Mantiene proporción */
+  filter: drop-shadow(0 0 12px #fdfdfd); /* Brillo tipo LED */
 }
 
 .store-name {
-  font-size: 2.2rem;
-  margin: 10px 0 0;
-  color: #00ffff;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  text-shadow:
-    0 0 5px #00ffff,
-    0 0 10px #00ffff,
-    0 0 20px #00ffff,
-    0 0 40px #00ffff,
-    0 0 80px #00ffff;
+  font-size: 2.4rem; /* Tamaño grande para destacar */
+  color: #ff1a1a; /* Rojo intenso */
+  text-transform: uppercase; /* Todo en mayúsculas */
+  letter-spacing: 3px; /* Separación entre letras */
+  font-weight: 700; /* Negrita */
+  text-shadow: /* Varias capas para efecto neón */
+    0 0 4px #fff, 
+    0 0 8px #ff1a1a, 
+    0 0 12px #ff1a1a, 
+    0 0 20px #ff1a1a, 
+    0 0 40px #ff1a1a;
 }
 
-/* === CARRUSEL GENÉRICO === */
-.carousel-wrapper {
-  position: relative;
-  width: 100%;
-  max-width: 1200px; /* ancho máximo centrado */
-  margin: 40px auto;  /* centra horizontalmente */
-  padding: 10px 20px;
-  box-sizing: border-box;
-}
-
-.carousel {
-  display: flex;
-  gap: 30px;  /* espacio entre productos */
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  justify-content: flex-start; /* en mobile y tablet deja scroll desde inicio */
-  padding: 10px 0;
-}
-
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel .producto {
-  flex: 0 0 calc((100% - 60px)/3); /* 3 productos visibles con gaps */
-  background: rgba(0,0,0,0.6);
-  border: 2px solid #00ffff;
-  border-radius: 12px;
-  padding: 15px;
-  text-align: center;
-  box-shadow: 0 0 15px #00ffff22;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.carousel .producto img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-.carousel .producto h3 {
-  margin: 10px 0 5px;
-  color: #fff;
-}
-
-.carousel .producto .precio {
-  color: #00ffff;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.carousel .btn {
-  display: inline-block;
-  padding: 8px 16px;
-  color: #fff;
-  border: 1px solid #00ffff;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: 0.3s;
-}
-
-.carousel .btn:hover {
-  background: #00ffff;
-  color: #000;
-  box-shadow: 0 0 10px #00ffff;
-}
-
-.carousel .producto:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 25px #00ffff55;
-}
-
-/* FLECHAS */
-.carousel-arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,255,255,0.2);
-  border: none;
-  color: #00ffff;
-  font-size: 1.5rem;
-  padding: 10px;
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 10;
-  transition: 0.3s;
-}
-
-.carousel-arrow:hover {
-  background: rgba(0,255,255,0.4);
-  box-shadow: 0 0 10px #00ffff;
-}
-
-.carousel-arrow.left { left: -20px; }
-.carousel-arrow.right { right: -20px; }
-
-/* === RESPONSIVE === */
-
-/* Tablet: 2 productos visibles */
-@media (max-width: 992px) {
-  .carousel .producto {
-    flex: 0 0 calc((100% - 30px)/2); /* 2 productos con gap */
-  }
-}
-
-/* Mobile: 1 producto visible */
-@media (max-width: 600px) {
-  .carousel {
-    gap: 20px;
-  }
-  .carousel .producto {
-    flex: 0 0 80%;
-    margin: 0 auto;
-  }
-}
-
-
-/* Menú inferior centrado */
+/* ===== MENÚ INFERIOR ===== */
 .header-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 30px;
-  margin-top: 15px;
-  padding: 0 40px;
+  display: flex; /* Flexbox horizontal */
+  justify-content: space-between; /* Separa grupos de enlaces */
+  align-items: center; /* Centrado vertical */
+  flex-wrap: wrap; /* Permite varias líneas si no entra */
+  gap: 30px; /* Espacio entre grupos */
+  margin-top: 15px; /* Separación del header-top */
+  padding: 0 40px; /* Espaciado lateral */
 }
 
 .nav-left, .nav-right {
-  display: flex;
-  gap: 25px;
-  flex-wrap: wrap;
+  display: flex; /* Alineación horizontal de enlaces */
+  gap: 25px; /* Espacio entre enlaces */
+  flex-wrap: wrap; /* Permite bajar de línea si falta espacio */
 }
 
 nav a,
@@ -209,14 +75,14 @@ nav a,
 .nav-left a,
 .nav-right a,
 .cart-link {
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
-  color: #e0ffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-shadow: 0 0 8px #00ffff55;
-  transition: all 0.3s ease;
+  font-family: 'Orbitron', sans-serif; /* Fuente futurista */
+  letter-spacing: 2px; /* Espaciado de letras */
+  color: #ffe0e0; /* Color de enlace */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: 600; /* Peso medio */
+  font-size: 1.1rem; /* Tamaño legible */
+  text-shadow: 0 0 8px #ff260065; /* Brillo suave rojo */
+  transition: all 0.3s ease; /* Suaviza cambios al hover */
 }
 
 nav a:hover,
@@ -224,110 +90,166 @@ nav a:hover,
 .nav-left a:hover,
 .nav-right a:hover,
 .cart-link:hover {
-  color: #00ffff;
-  text-shadow: 0 0 15px #00ffff;
-}
-
-.nav-left a,
-.nav-right a,
-.cart-link {
-  font-family: 'Orbitron', sans-serif;
-  letter-spacing: 2px;
-  color: #e0ffff;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1.1rem;
-  text-shadow: 0 0 8px #00ffff55;
-  transition: all 0.3s ease;
+  color: #ff1100; /* Color rojo brillante al pasar mouse */
+  text-shadow: 0 0 15px #ff0000; /* Luz neón */
 }
 
 .nav-left a:hover,
 .nav-right a:hover,
 .cart-link:hover {
-  color: #00ffff;
-  text-shadow: 0 0 15px #00ffff;
+  color: #ff0055ff; /* Fucsia intenso */
+  text-shadow: 0 0 15px #ff0055ff; /* Sombra fucsia */
 }
 
-/* Icono carrito */
 .cart-link i {
-  margin-right: 6px;
+  margin-right: 6px; /* Separación icono-carrito */
 }
-
 
 e {
   font-size: 2rem;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff88;
+  color: #00ffff; /* Cian brillante */
+  text-shadow: 0 0 10px #ff0000b6; /* Efecto mezcla rojo/cian */
   font-family: 'Orbitron', sans-serif;
   margin-top: 8px;
 }
 
-/* Menú inferior */
-.header-bottom {
-  margin-top: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 40px;
+/* ===== CARRUSEL GENÉRICO ===== */
+.carousel-wrapper {
+  position: relative; /* Para posicionar flechas absolutas */
+  width: 100%; /* Ancho completo */
+  max-width: 1200px; /* Máximo ancho centrado */
+  margin: 40px auto; /* Centrado horizontal y espacio vertical */
+  padding: 10px 20px; /* Padding interno */
+  box-sizing: border-box; /* Incluye padding en ancho total */
 }
 
-/* Sección izquierda del menú */
-.nav-left a {
-  color: #fff;
-  text-decoration: none;
-  margin-right: 25px;
+.carousel {
+  display: flex; /* Flexbox horizontal para productos */
+  gap: 30px; /* Espacio entre productos */
+  overflow-x: auto; /* Scroll horizontal en móviles */
+  scroll-behavior: smooth; /* Animación suave al hacer scroll */
+  justify-content: flex-start; /* Alineación inicial */
+  padding: 10px 0; /* Padding superior e inferior */
+}
+
+.carousel::-webkit-scrollbar {
+  display: none; /* Oculta la barra de scroll en Chrome/Safari */
+}
+
+.carousel .producto {
+  flex: 0 0 calc((100% - 60px)/3); /* 3 productos visibles con gap */
+  background: rgba(0,0,0,0.6); /* Fondo semi-transparente */
+  border: 2px solid #ff5100; /* Borde rojo anaranjado */
+  border-radius: 12px; /* Bordes redondeados */
+  padding: 15px; /* Espaciado interno */
+  text-align: center; /* Centrado del contenido */
+  box-shadow: 0 0 15px #00ffff22; /* Sombra azul suave */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Animación al hover */
+}
+
+.carousel .producto img {
+  width: 100%; /* Imagen completa */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+.carousel .producto h3 {
+  margin: 10px 0 5px; /* Separación de texto */
+  color: #ffffff; /* Blanco */
+}
+
+.carousel .producto .precio {
+  color: #ff0000; /* Rojo intenso */
   font-weight: bold;
-  transition: color 0.3s, text-shadow 0.3s;
+  margin-bottom: 10px;
 }
 
-.nav-left a:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffffaa;
-}
-
-/* Sección derecha del carrito */
-.cart-link {
-  color: #fff;
+.carousel .btn {
+  display: inline-block;
+  padding: 8px 16px;
+  color: #ffffff;
+  border: 1px solid #ff0000;
+  border-radius: 8px;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s, text-shadow 0.3s;
+  transition: 0.3s;
 }
 
-.cart-link i {
-  margin-right: 6px;
+.carousel .btn:hover {
+  background: #ff0000;
+  color: #000;
+  box-shadow: 0 0 10px #ff0000;
 }
 
-.cart-link:hover {
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffffaa;
+.carousel .producto:hover {
+  transform: scale(1.05); /* Agranda al pasar mouse */
+  box-shadow: 0 0 25px #ff000055; /* Sombra más intensa */
 }
 
+/* FLECHAS */
+.carousel-arrow {
+  position: absolute; /* Posición sobre el carrusel */
+  top: 50%; /* Centrado vertical */
+  transform: translateY(-50%); /* Ajuste exacto al centro */
+  background: rgba(0,255,255,0.2); /* Fondo translúcido */
+  border: none;
+  color: #ff0000; /* Rojo */
+  font-size: 1.5rem;
+  padding: 10px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10; /* Encima de otros elementos */
+  transition: 0.3s;
+}
+
+.carousel-arrow:hover {
+  background: rgba(255, 0, 0, 0.479); /* Fondo rojo al hover */
+  box-shadow: 0 0 10px #ff0000;
+}
+
+.carousel-arrow.left { left: -20px; }
+.carousel-arrow.right { right: -20px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+  .carousel .producto {
+    flex: 0 0 calc((100% - 30px)/2); /* 2 productos en tablet */
+  }
+}
+
+@media (max-width: 600px) {
+  .carousel {
+    gap: 20px;
+  }
+  .carousel .producto {
+    flex: 0 0 80%; /* 1 producto visible en móvil */
+    margin: 0 auto;
+  }
+}
 
 /* ===== CONTENIDO PRINCIPAL ===== */
 main {
   max-width: 1100px;
-  margin: 40px auto;
+  margin: 40px auto; /* Centrado horizontal con margen vertical */
   padding: 0 20px;
 }
 
 h2 {
   text-align: center;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
+  color: #ff0055ff; /* Fucsia intenso */
+  text-shadow: 0 0 10px #ff0055ff;
   font-size: 1.8rem;
   margin-bottom: 25px;
 }
 
 /* ===== CATÁLOGO ===== */
 .productos {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: grid; /* Grid para organizar productos */
+  grid-template-columns: 1fr; /* 1 columna por defecto */
   gap: 20px;
 }
 
 .producto {
-  background: rgba(20, 20, 35, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  background: rgba(20, 20, 35, 0.8); /* Fondo semi-transparente oscuro */
+  border: 1px solid rgba(255, 255, 255, 0.05); /* Borde muy tenue */
   border-radius: 12px;
   text-align: center;
   box-shadow: 0 0 12px rgba(0, 255, 255, 0.1);
@@ -337,20 +259,20 @@ h2 {
 
 .producto:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(255, 0, 85, 0.4);
+  box-shadow: 0 0 20px rgba(255, 0, 85, 0.4); /* Sombra rosa neón */
 }
 
 .producto img {
   width: 100%;
   height: 220px;
-  object-fit: cover;
+  object-fit: cover; /* Ajusta la imagen al contenedor */
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .producto h3 {
   margin: 10px 0 5px;
-  color: #00ffff;
-  text-shadow: 0 0 5px #00ffff;
+  color: #ff0055ff;
+  text-shadow: 0 0 5px #ff0055ff;
 }
 
 .precio {
@@ -360,18 +282,20 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* ===== BOTÓN ===== */
+
+
+/* ===== BOTONES ===== */
 .btn {
   display: inline-block;
-  background: linear-gradient(90deg, #00ffff, #ff0055);
-  color: #0a0a0f;
+  background: linear-gradient(90deg, #ff0000, #ff0055); /* Gradiente rojo-fucsia */
+  color: #0a0a0f; /* Texto oscuro */
   font-weight: 700;
   padding: 10px 18px;
   border-radius: 6px;
   text-decoration: none;
   margin-bottom: 15px;
   transition: 0.3s;
-  box-shadow: 0 0 10px #00ffff66;
+  box-shadow: 0 0 10px #ff0055ff;
 }
 
 .btn:hover {
@@ -379,86 +303,41 @@ h2 {
   box-shadow: 0 0 15px #ff0055aa;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  background: rgba(0, 0, 0, 0.7);
-  color: #aaa;
-  text-align: center;
-  padding: 20px 0;
-  margin-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  font-size: 13px;
-}
-
-
 /* ==========================================================
-   🔍 BUSCADOR VISUAL
+   🔍 BUSCADOR VISUAL - Estilo centrado y neón
    ========================================================== */
-
 .buscador {
-  text-align: center;
-  margin: 30px 0 40px;
+  text-align: center; /* Centra el buscador horizontalmente */
+  margin: 30px 0 40px; /* Espacio arriba y abajo */
 }
 
 .buscador input {
-  width: 90%;
-  max-width: 500px;
-  padding: 12px 16px;
-  border-radius: 30px;
-  border: none;
-  outline: none;
-  background: #1c1c1c;
-  color: #eee;
-  font-size: 1rem;
-  box-shadow: 0 0 10px rgba(255,203,5,0.3), 0 0 20px rgba(42,117,187,0.3);
-  transition: 0.3s;
+  width: 90%; /* Ocupa casi todo el contenedor */
+  max-width: 500px; /* Máximo ancho */
+  padding: 12px 16px; /* Espaciado interno */
+  border-radius: 30px; /* Bordes redondeados */
+  border: none; /* Sin borde por defecto */
+  outline: none; /* Sin outline al hacer click */
+  background: #1c1c1c; /* Fondo oscuro */
+  color: #eee; /* Color del texto */
+  font-size: 1rem; /* Tamaño legible */
+  box-shadow: 0 0 10px rgba(255,203,5,0.3), 0 0 20px rgba(42,117,187,0.3); /* Brillo tipo neón */
+  transition: 0.3s; /* Animación suave */
 }
 
 .buscador input::placeholder {
-  color: #999;
+  color: #999; /* Color del placeholder */
 }
 
 .buscador input:focus {
-  box-shadow: 0 0 20px rgba(255,203,5,0.6), 0 0 40px rgba(42,117,187,0.6);
-  background: #222;
-}
-
-
-
-/* ==========================================================
-   🔘 Paginador visual
-   ========================================================== */
-.paginador {
-  text-align: center;
-  margin: 30px 0;
-}
-
-.page-btn {
-  display: inline-block;
-  margin: 0 6px;
-  padding: 8px 14px;
-  border-radius: 8px;
-  background: linear-gradient(90deg, #00ffff, #ff0055);
-  color: #0a0a0f;
-  font-weight: bold;
-  text-decoration: none;
-  transition: 0.3s;
-  box-shadow: 0 0 10px #00ffffaa, 0 0 15px #ff0055aa;
-}
-
-.page-btn:hover {
-  transform: scale(1.1);
-  box-shadow: 0 0 20px #00ffffff, 0 0 25px #ff0055ff;
+  background: #222; /* Fondo más oscuro al enfocarse */
+  box-shadow: 0 0 20px rgba(255,203,5,0.6), 0 0 40px rgba(42,117,187,0.6); /* Brillo más intenso al focus */
 }
 
 
 
 
-
-/* ==========================================================
-   ⚡ FOOTER NEÓN POKÉSTORE
-   ========================================================== */
-
+/* ===== FOOTER ===== */
 footer {
   background: rgba(0, 0, 0, 0.8);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
@@ -470,8 +349,8 @@ footer {
 
 .footer-contenido h3 {
   font-size: 1.4rem;
-  color: #00ffff;
-  text-shadow: 0 0 10px #00ffff;
+  color: #ff0000;
+  text-shadow: 0 0 10px #ff0000;
   margin-bottom: 10px;
 }
 
@@ -481,7 +360,7 @@ footer {
   margin-bottom: 25px;
 }
 
-/* ===== ICONOS DE REDES ===== */
+/* ===== ICONOS REDES SOCIALES ===== */
 .redes {
   display: flex;
   justify-content: center;
@@ -492,7 +371,7 @@ footer {
 .redes a {
   font-size: 1.5rem;
   text-decoration: none;
-  color: #00ffff;
+  color: #ff0062;
   transition: 0.3s;
   padding: 10px;
   border-radius: 50%;
@@ -515,9 +394,7 @@ footer {
   margin-top: 10px;
 }
 
-/* ==========================================================
-   🔹 BOTÓN VER MÁS - Shop
-   ========================================================== */
+/* ===== BOTÓN VER MÁS SHOP ===== */
 .ver-mas {
   text-align: center;
   margin: 40px 0;
@@ -525,68 +402,43 @@ footer {
 
 .btn-shop {
   display: inline-block;
-  background: linear-gradient(90deg, #00ffff, #ff0055);
+  background: linear-gradient(90deg, #ff3c00, #ff0055);
   color: #0a0a0f;
   font-weight: bold;
   font-size: 1.2rem;
   padding: 14px 30px;
   border-radius: 12px;
   text-decoration: none;
-  box-shadow: 0 0 15px rgba(0,255,255,0.5), 0 0 25px rgba(255,0,85,0.5);
+  box-shadow: 0 0 15px rgba(255, 72, 0, 0.199), 0 0 25px rgba(255,0,85,0.5);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .btn-shop:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px rgba(0,255,255,0.8), 0 0 35px rgba(255,0,85,0.8);
+  box-shadow: 0 0 25px rgba(255, 38, 0, 0.767), 0 0 35px rgba(255,0,85,0.8);
 }
 
-/* Logo a la izquierda y tamaño pequeño */
-.logo {
-  height: 150px; /* tamaño pequeño, podés ajustar */
-  width: auto;  /* mantiene proporción */
-  display: block; /* evita espacios extra debajo de la imagen */
-}
-
-/* Opcional: que el nav quede a la derecha */
-header nav {
-  margin-left: auto; /* empuja el nav al extremo derecho */
-}
-
-header nav a {
-  color: #fff;
-  text-decoration: none;
-  margin-left: 20px;
-  font-weight: bold;
-}
-
-header nav a:hover {
-  color: #f90;
-}
-
-/* ==========================================================
-   📝 Formulario de contacto
-   ========================================================== */
+/* ===== FORMULARIO CONTACTO ===== */
 .contacto-form {
   max-width: 500px;
   margin: 40px auto;
   background: #0a0a0f;
   padding: 30px;
   border-radius: 12px;
-  box-shadow: 0 0 20px #00ffff33, 0 0 25px #ff005533;
+  box-shadow: 0 0 20px #ff00372d, 0 0 25px #ff00003f;
 }
 
 .contacto-form h2 {
-  color: #00ffff;
+  color: #ff1e00;
   text-align: center;
   margin-bottom: 20px;
-  text-shadow: 0 0 8px #00ffff;
+  text-shadow: 0 0 8px #ff0000;
 }
 
 .contacto-form label {
   display: block;
   margin: 12px 0 4px;
-  color: #ccc;
+  color: #cccccc;
 }
 
 .contacto-form input,
@@ -594,9 +446,9 @@ header nav a:hover {
   width: 100%;
   padding: 10px 12px;
   border-radius: 8px;
-  border: 1px solid #00ffff55;
+  border: 1px solid #ff3c0055;
   background: #111;
-  color: #eee;
+  color: #eeeeee;
   outline: none;
   margin-bottom: 10px;
   transition: 0.3s;
@@ -605,35 +457,28 @@ header nav a:hover {
 .contacto-form input:focus,
 .contacto-form textarea:focus {
   border-color: #ff0055;
-  box-shadow: 0 0 10px #00ffffaa, 0 0 15px #ff0055aa;
+  box-shadow: 0 0 10px #ff5100aa, 0 0 15px #ff0055aa;
 }
 
 .contacto-form .btn {
   display: block;
   width: 100%;
   padding: 12px;
-  background: linear-gradient(90deg, #00ffff, #ff0055);
+  background: linear-gradient(90deg, #ff0000, #ff0055);
   color: #0a0a0f;
   font-weight: bold;
   font-size: 1rem;
   border: none;
   border-radius: 10px;
   cursor: pointer;
-  box-shadow: 0 0 15px #00ffffaa, 0 0 20px #ff0055aa;
+  box-shadow: 0 0 15px #ff0000aa, 0 0 20px #ff0055aa;
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
 .contacto-form .btn:hover {
   transform: scale(1.05);
-  box-shadow: 0 0 25px #00ffffff, 0 0 30px #ff0055ff;
+  box-shadow: 0 0 25px rgb(255, 38, 0), 0 0 30px #ff0055ff;
 }
-
-
-
-
-
-
-
 
 /* ===== RESPONSIVE ===== */
 @media (min-width: 768px) {
@@ -641,9 +486,8 @@ header nav a:hover {
     font-size: 16px;
     padding: 20px;
   }
-
   .productos {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas en tablet */
   }
 }
 
@@ -652,25 +496,18 @@ header nav a:hover {
     font-size: 18px;
     padding: 30px;
   }
-
   .productos {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* 3 columnas en desktop */
   }
 }
 
-/* ===== HEADER RESPONSIVE ===== */
 @media (max-width: 768px) {
   .header-bottom {
-    flex-direction: column;
+    flex-direction: column; /* Menu vertical en móviles */
     gap: 15px;
     padding: 0 20px;
   }
   .nav-left, .nav-right {
-    justify-content: center;
+    justify-content: center; /* Centrado de enlaces */
   }
 }
-
-    justify-content: center;
-  }
-}
-
